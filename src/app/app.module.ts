@@ -6,7 +6,8 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { LoginFooterComponent } from "./layout/components/login-footer/login-footer.component";
+import { LoginHeaderComponent } from "./layout/components/login-header/login-header.component";
 
 @NgModule({
   imports: [
@@ -16,8 +17,7 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
     AppRoutingModule
   ],
   declarations: [
-    AppComponent,
-    ForgotPasswordComponent,
+    AppComponent, LoginFooterComponent, LoginHeaderComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
