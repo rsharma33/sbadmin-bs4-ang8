@@ -1,0 +1,42 @@
+$topnav-background-color: #fff;
+:host {
+    display: block;   
+}
+
+.login-page {
+    height: 100vh;
+
+    h2{ font-size: 1.6em; font-weight: 600; }
+    h3{ font-size: 1.4em; font-weight: 400; }
+
+    .logo-header{
+        background-color: $topnav-background-color;
+    }
+
+    .login-body{
+        color: #fff;
+        background-color: #fff;
+        background: url("../../assets/images/login-background-bg.png") top center no-repeat;
+        background-size: cover;
+
+        .email-field{
+           /* background-image: url("../../assets/images/email_icon.png"); */
+        }
+
+        .form-check-label,
+        .fgt-pass-link{
+            font-size: 14px; font-weight: 400; color: #c8c8c8;
+        }
+    }
+
+    .login-footer{
+        color:#6FA0A8;
+        font-size: 12px;
+
+        .copyright{
+            a:link{
+                color: #6FA0A8;
+            }
+        }
+    }
+}

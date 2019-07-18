@@ -1,0 +1,110 @@
+<nav class="sidebar" [ngClass]="{sidebarPushRight: isActive, collapsed: collapsed}">
+    <div class="list-group">
+        <a routerLink="/dashboard" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-desktop"></i>&nbsp;
+            <span>Dashboard</span>
+        </a>
+
+        <a [routerLink]="['/business-partners']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-table"></i>&nbsp;
+            <span>Business Partners</span>
+        </a>
+
+        <a [routerLink]="['/products']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-table"></i>&nbsp;
+            <span>Products</span>
+        </a>
+
+        <a  [routerLink]="['/administration']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-table"></i>&nbsp;
+            <span>Administration</span>
+        </a>
+
+        <div class="nested-menu">
+            <a class="list-group-item" (click)="addExpandClass('pages')">
+                <i class="fa fa-plus"></i>&nbsp;
+                <span>Handling Orders</span>
+            </a>
+            <li class="nested" [class.expand]="showMenu === 'pages'">
+                <ul class="submenu">
+                    <li>
+                        <a href="javascript:void(0)">
+                            <i class="fa fa-monument"></i>&nbsp;
+                            <span>To Do</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <i class="fa fa-monument"></i>&nbsp;
+                            <span>{{ 'Create New Order' }}</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <i class="fa fa-monument"></i>&nbsp;
+                            <span>{{ 'Active Order' }}</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </div>
+
+        <div class="header-fields">
+            <a (click)="rltAndLtr()" class="list-group-item">
+                <span><i class="fa fa-arrows-h"></i>&nbsp; RTL/LTR</span>
+            </a>
+            <div class="nested-menu">
+                <a class="list-group-item" (click)="addExpandClass('languages')">
+                    <span><i class="fa fa-language"></i>&nbsp; {{ 'Language' }} <b class="caret"></b></span>
+                </a>
+                <li class="nested" [class.expand]="showMenu === 'languages'">
+                    <ul class="submenu">
+                        <li>
+                            <a href="javascript:void(0)" (click)="changeLang('en')">
+                                {{ 'English' }}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" (click)="changeLang('fr')">
+                                {{ 'French' }}
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </div>
+            <div class="nested-menu">
+                <a class="list-group-item" (click)="addExpandClass('profile')">
+                    <span><i class="fa fa-user"></i>&nbsp; John Smith</span>
+                </a>
+                <li class="nested" [class.expand]="showMenu === 'profile'">
+                    <ul class="submenu">
+                        <li>
+                            <a href="javascript:void(0)">
+                                <span><i class="fa fa-fw fa-user"></i> {{ 'Profile' }}</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <span><i class="fa fa-fw fa-envelope"></i> {{ 'Inbox' }}</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <span><i class="fa fa-fw fa-gear"></i> {{ 'Settings' }}</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/login']" (click)="onLoggedout()">
+                                <span><i class="fa fa-fw fa-power-off"></i> {{ 'Log Out' }}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </div>
+        </div>
+    </div>
+    <div class="toggle-button" [ngClass]="{collapsed: collapsed}" (click)="toggleCollapsed()">
+        <i class="fa fa-fw fa-angle-double-{{collapsed?'right':'left'}}"></i>&nbsp;
+        <span>{{ 'Collapse Sidebar' }}</span>
+    </div>
+</nav>
